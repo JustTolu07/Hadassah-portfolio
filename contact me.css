@@ -1,0 +1,114 @@
+/* ==== RESET ==== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  scroll-behavior: smooth;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ==== HEADER ==== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #3b0bbf;
+}
+.logo span { color: #f68b1e; }
+nav { display: flex; align-items: center; }
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+.nav-links a:hover,
+.nav-links a.active { color: #4c1d95; font-weight: 600; }
+#dark-toggle {
+  margin-left: 15px;
+  font-size: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+.hamburger { display: none; font-size: 24px; cursor: pointer; margin-left: 20px; }
+
+/* ==== SOCIALS ==== */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 60px auto;
+  flex-wrap: wrap;
+}
+.social a {
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+.social a:hover {
+  transform: translateY(-8px);
+  color: #3b0bbf;
+}
+.social p { margin-top: 10px; font-weight: bold; text-transform: capitalize; }
+
+/* ==== CONTACT INFO ==== */
+.contact-info { text-align: center; margin-top: 30px; }
+.contact-info p { margin: 12px 0; font-size: 18px; }
+.contact-info a { color: #3b0bbf; text-decoration: none; }
+.contact-info a:hover { text-decoration: underline; }
+
+/* ==== FOOTER ==== */
+footer {
+  background: #007BFF;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+/* ==== DARK MODE ==== */
+body.dark { background: #111; color: #fff; }
+body.dark .nav-links a { color: #fff; }
+body.dark .contact-info a { color: #f28c38; }
+body.dark footer { background: #0056b3; }
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0;
+  }
+  .nav-links.open { max-height: 300px; }
+}
